@@ -1,0 +1,34 @@
+fileFormatVersion: 2
+guid: bd8ee3639047ee5419188499387c2c6c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Button: {instanceID: 0}
+  - Button1: {instanceID: 0}
+  - Dahaka2D: {fileID: 21300000, guid: 01414de5515710b4cbfcbd247f066a2e, type: 3}
+  - OmniMan2D: {fileID: 21300000, guid: 931671ab2607da2429030fd8bc4c5ad8, type: 3}
+  - Pudge2D: {fileID: 21300000, guid: 5ab21972d5c0ec6479b93f8add04921d, type: 3}
+  - Sokol2D: {fileID: 21300000, guid: 486d9d2178a5f784db285cf7aaf5a012, type: 3}
+  - Vlad2D: {fileID: 21300000, guid: 68c9323fcf3214948aa08bbfa0dad8eb, type: 3}
+  - Wick2D: {fileID: 21300000, guid: 8f32a90419359f44384c5c809f0c4b23, type: 3}
+  - TD2D: {fileID: 21300000, guid: 68c077476a87b2144a3ef5267f81da62, type: 3}
+  - Stonk2D: {fileID: 21300000, guid: 2eadfc0c5533e404f857b4960a062ecd, type: 3}
+  - SmallFin2D: {fileID: 21300000, guid: b8496a8d17f30714bb780b03ec3d1542, type: 3}
+  - Nikky2D: {fileID: 21300000, guid: 4ae15055e4761c94c85b4bd986692996, type: 3}
+  - Hamster2D: {fileID: 21300000, guid: 69f8ce8b670ea774d9524bc5d1c17c87, type: 3}
+  - Woody2D: {fileID: 21300000, guid: cfaf4efb536fa3344a1e3551b6f395ab, type: 3}
+  - Integra2D: {fileID: 21300000, guid: 3242f10dd04733e45b50c0b38254d782, type: 3}
+  - Albedo2D: {fileID: 21300000, guid: dd7dd023ad5fcd24da76563237c0a4e1, type: 3}
+  - Ruby2D: {fileID: 21300000, guid: 489e53bb3ae7ef04da40056b76028463, type: 3}
+  - Shikamaru2D: {fileID: 21300000, guid: edd992049803e214bba78d0696cc6d3d, type: 3}
+  - Lust2D: {fileID: 21300000, guid: be2479212f8f1d343b15e6d4b3b6aa24, type: 3}
+  - Kek2D: {fileID: 21300000, guid: 3a827ab89d20f1741ae523f31127fc4f, type: 3}
+  - Anime2D: {fileID: 21300000, guid: f026cecf2674f624a9168d0a92ac8fd0, type: 3}
+  - Boysman2D: {fileID: 21300000, guid: b76fad64f35dee3428787d511b9111c9, type: 3}
+  - Murlocs2D: {fileID: 21300000, guid: b6244d71aeb5ac645ba270a6336a71fb, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
