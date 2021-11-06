@@ -697,7 +697,7 @@ MonoBehaviour:
   textThrow: {fileID: 1375592160}
   textFiling: {fileID: 726920899}
   PlayerNumber: 0
-  side: 1
+  Side: 0
 --- !u!212 &99973617
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1035,13 +1035,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNumber: 5
-  side: 0
+  Side: 0
   PH: 2
   NeighborLeft: {fileID: 1984819355}
   NeighborMid: {fileID: 556782711}
   NeighborRight: {fileID: 2045455388}
   BackLight: {fileID: 206920786}
-  Ball: {fileID: 1145518411}
+  Ball: {fileID: 1145518412}
   StatsCatch: 0
   StatsFiling: 0
 --- !u!212 &173997969
@@ -1610,13 +1610,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNumber: 3
-  side: 1
+  Side: 1
   PH: 0
   NeighborLeft: {fileID: 1442777246}
   NeighborMid: {fileID: 1639119010}
   NeighborRight: {fileID: 643968170}
   BackLight: {fileID: 888418334}
-  Ball: {fileID: 1145518411}
+  Ball: {fileID: 1145518412}
   StatsCatch: 0
   StatsFiling: 0
 --- !u!212 &284909514
@@ -2377,6 +2377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 409873311}
+  - component: {fileID: 409873312}
   m_Layer: 5
   m_Name: Filing
   m_TagString: Untagged
@@ -2406,6 +2407,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &409873312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409873310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b68bfc1d687f54db2228fd96f526c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &437886840
 GameObject:
   m_ObjectHideFlags: 0
@@ -3030,7 +3043,7 @@ MonoBehaviour:
   textThrow: {fileID: 8746457}
   textFiling: {fileID: 686338851}
   PlayerNumber: 0
-  side: 0
+  Side: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3307,13 +3320,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNumber: 1
-  side: 1
+  Side: 1
   PH: 0
   NeighborLeft: {fileID: 1639119010}
   NeighborMid: {fileID: 643968170}
   NeighborRight: {fileID: 1442777246}
   BackLight: {fileID: 1591260065}
-  Ball: {fileID: 1145518411}
+  Ball: {fileID: 1145518412}
   StatsCatch: 0
   StatsFiling: 0
 --- !u!212 &552245922
@@ -3412,13 +3425,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNumber: 2
-  side: 0
+  Side: 0
   PH: 1
   NeighborLeft: {fileID: 1466318503}
   NeighborMid: {fileID: 173997966}
   NeighborRight: {fileID: 2002352953}
   BackLight: {fileID: 1258551628}
-  Ball: {fileID: 1145518411}
+  Ball: {fileID: 1145518412}
   StatsCatch: 0
   StatsFiling: 0
 --- !u!212 &556782713
@@ -3733,8 +3746,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1145518412}
-        m_TargetAssemblyTypeName: NewBall, Assembly-CSharp
+      - m_Target: {fileID: 409873312}
+        m_TargetAssemblyTypeName: TargetFiling, Assembly-CSharp
         m_MethodName: FilingMid
         m_Mode: 1
         m_Arguments:
@@ -3795,14 +3808,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24c1892727b82e43acc0fe414e8af6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PositionD0: {fileID: 1639119010}
-  PositionD1: {fileID: 552245920}
-  PositionD2: {fileID: 1442777246}
-  PositionD3: {fileID: 284909512}
-  PositionD4: {fileID: 643968170}
-  PositionD5: {fileID: 2133375861}
-  mode: 1
-  Ball: {fileID: 1145518411}
+  PositionD0: {fileID: 1639119011}
+  PositionD1: {fileID: 552245921}
+  PositionD2: {fileID: 1442777247}
+  PositionD3: {fileID: 284909513}
+  PositionD4: {fileID: 643968171}
+  PositionD5: {fileID: 2133375863}
+  Mode: 1
 --- !u!61 &591526826
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3963,7 +3975,7 @@ MonoBehaviour:
   textThrow: {fileID: 32175703}
   textFiling: {fileID: 2027653132}
   PlayerNumber: 1
-  side: 0
+  Side: 0
 --- !u!212 &611318096
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4100,9 +4112,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1145518412}
-        m_TargetAssemblyTypeName: NewBall, Assembly-CSharp
-        m_MethodName: butterRight
+      - m_Target: {fileID: 918737469}
+        m_TargetAssemblyTypeName: ChoiceNeighbor, Assembly-CSharp
+        m_MethodName: ButterRight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4163,7 +4175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 2
-  Ball: {fileID: 1145518411}
+  Ball: {fileID: 1145518412}
 --- !u!61 &621815674
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4433,8 +4445,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1145518412}
-        m_TargetAssemblyTypeName: NewBall, Assembly-CSharp
+      - m_Target: {fileID: 409873312}
+        m_TargetAssemblyTypeName: TargetFiling, Assembly-CSharp
         m_MethodName: FilingLeft
         m_Mode: 1
         m_Arguments:
@@ -4495,14 +4507,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24c1892727b82e43acc0fe414e8af6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PositionD0: {fileID: 1639119010}
-  PositionD1: {fileID: 552245920}
-  PositionD2: {fileID: 1442777246}
-  PositionD3: {fileID: 284909512}
-  PositionD4: {fileID: 643968170}
-  PositionD5: {fileID: 2133375861}
-  mode: 0
-  Ball: {fileID: 1145518411}
+  PositionD0: {fileID: 1639119011}
+  PositionD1: {fileID: 552245921}
+  PositionD2: {fileID: 1442777247}
+  PositionD3: {fileID: 284909513}
+  PositionD4: {fileID: 643968171}
+  PositionD5: {fileID: 2133375863}
+  Mode: 0
 --- !u!61 &636286858
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4560,13 +4571,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNumber: 4
-  side: 1
+  Side: 1
   PH: 0
   NeighborLeft: {fileID: 284909512}
   NeighborMid: {fileID: 552245920}
   NeighborRight: {fileID: 2133375861}
   BackLight: {fileID: 1292002465}
-  Ball: {fileID: 1145518411}
+  Ball: {fileID: 1145518412}
   StatsCatch: 0
   StatsFiling: 0
 --- !u!212 &643968172
@@ -4665,10 +4676,10 @@ RectTransform:
   m_LocalScale: {x: 0.06, y: 0.06, z: 0.043792326}
   m_Children:
   - {fileID: 1800223255}
+  - {fileID: 1870708097}
   - {fileID: 1241339594}
   - {fileID: 1775520809}
   - {fileID: 1144010262}
-  - {fileID: 1870708097}
   - {fileID: 1631987131}
   - {fileID: 975415948}
   - {fileID: 1182198995}
@@ -5632,9 +5643,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1145518412}
-        m_TargetAssemblyTypeName: NewBall, Assembly-CSharp
-        m_MethodName: butterMid
+      - m_Target: {fileID: 918737469}
+        m_TargetAssemblyTypeName: ChoiceNeighbor, Assembly-CSharp
+        m_MethodName: ButterMid
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5695,7 +5706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 1
-  Ball: {fileID: 1145518411}
+  Ball: {fileID: 1145518412}
 --- !u!61 &765298405
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5773,7 +5784,7 @@ MonoBehaviour:
   textThrow: {fileID: 463868048}
   textFiling: {fileID: 344214907}
   PlayerNumber: 3
-  side: 1
+  Side: 0
 --- !u!212 &768086750
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6151,9 +6162,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1145518412}
-        m_TargetAssemblyTypeName: NewBall, Assembly-CSharp
-        m_MethodName: butterLeft
+      - m_Target: {fileID: 918737469}
+        m_TargetAssemblyTypeName: ChoiceNeighbor, Assembly-CSharp
+        m_MethodName: ButterLeft
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6214,7 +6225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 0
-  Ball: {fileID: 1145518411}
+  Ball: {fileID: 1145518412}
 --- !u!61 &793295585
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6647,7 +6658,7 @@ MonoBehaviour:
   textThrow: {fileID: 187911997}
   textFiling: {fileID: 168860525}
   PlayerNumber: 4
-  side: 1
+  Side: 0
 --- !u!212 &878008399
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7077,7 +7088,7 @@ MonoBehaviour:
   textThrow: {fileID: 1224256589}
   textFiling: {fileID: 731023146}
   PlayerNumber: 3
-  side: 0
+  Side: 0
 --- !u!212 &918234378
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7138,6 +7149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 918737468}
+  - component: {fileID: 918737469}
   m_Layer: 5
   m_Name: Throw
   m_TagString: Untagged
@@ -7167,6 +7179,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &918737469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918737467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac04ebf4241714f4d83fc1c8c4b81eb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &934748534
 GameObject:
   m_ObjectHideFlags: 0
@@ -7832,7 +7856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d23a7556c46cff54e80659990bbdb44f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  side: 1
+  Side: 1
 --- !u!212 &1140912256
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7917,7 +7941,7 @@ RectTransform:
   m_Children:
   - {fileID: 831791142}
   m_Father: {fileID: 648202552}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7969,8 +7993,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1144010266}
-        m_TargetAssemblyTypeName: Exit, Assembly-CSharp
-        m_MethodName: onClick
+        m_TargetAssemblyTypeName: BackToMenu, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8068,9 +8092,11 @@ MonoBehaviour:
   winnerText: {fileID: 139115602}
   CheckRadiant: {fileID: 391265448}
   CheckDire: {fileID: 952905890}
-  CheckThrow_: {fileID: 1653758289}
-  CheckRadiant_: 0
-  CheckDire_: 0
+  CheckThrowText: {fileID: 1653758289}
+  CheckRadiantCounter: 0
+  CheckDireCounter: 0
+  ChoiceNeighbor: {fileID: 918737469}
+  TargetFiling: {fileID: 409873312}
   PositionR0: {fileID: 1984819355}
   PositionR1: {fileID: 2002352953}
   PositionR2: {fileID: 556782711}
@@ -8374,7 +8400,7 @@ MonoBehaviour:
   textThrow: {fileID: 1626614408}
   textFiling: {fileID: 1166686042}
   PlayerNumber: 2
-  side: 0
+  Side: 0
 --- !u!212 &1182613382
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8621,7 +8647,7 @@ Transform:
   - {fileID: 992488915}
   - {fileID: 1975136577}
   m_Father: {fileID: 648202552}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1241339595
 MonoBehaviour:
@@ -8950,7 +8976,7 @@ MonoBehaviour:
   textThrow: {fileID: 1274678299}
   textFiling: {fileID: 1515512569}
   PlayerNumber: 1
-  side: 1
+  Side: 0
 --- !u!212 &1276139490
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9208,7 +9234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d23a7556c46cff54e80659990bbdb44f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  side: 0
+  Side: 0
 --- !u!212 &1289849764
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9833,13 +9859,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNumber: 2
-  side: 1
+  Side: 1
   PH: 0
   NeighborLeft: {fileID: 552245920}
   NeighborMid: {fileID: 2133375861}
   NeighborRight: {fileID: 284909512}
   BackLight: {fileID: 753802315}
-  Ball: {fileID: 1145518411}
+  Ball: {fileID: 1145518412}
   StatsCatch: 0
   StatsFiling: 0
 --- !u!212 &1442777248
@@ -9952,13 +9978,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNumber: 3
-  side: 0
+  Side: 0
   PH: 1
   NeighborLeft: {fileID: 2045455388}
   NeighborMid: {fileID: 1984819355}
   NeighborRight: {fileID: 556782711}
   BackLight: {fileID: 235614823}
-  Ball: {fileID: 1145518411}
+  Ball: {fileID: 1145518412}
   StatsCatch: 0
   StatsFiling: 0
 --- !u!212 &1466318506
@@ -10383,7 +10409,7 @@ MonoBehaviour:
   textThrow: {fileID: 48435027}
   textFiling: {fileID: 475537119}
   PlayerNumber: 2
-  side: 1
+  Side: 0
 --- !u!212 &1552982314
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11045,13 +11071,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNumber: 0
-  side: 1
+  Side: 1
   PH: 0
   NeighborLeft: {fileID: 2133375861}
   NeighborMid: {fileID: 284909512}
   NeighborRight: {fileID: 552245920}
   BackLight: {fileID: 1243169425}
-  Ball: {fileID: 1145518411}
+  Ball: {fileID: 1145518412}
   StatsCatch: 0
   StatsFiling: 0
 --- !u!212 &1639119012
@@ -11497,7 +11523,7 @@ MonoBehaviour:
   textThrow: {fileID: 1883110557}
   textFiling: {fileID: 781838008}
   PlayerNumber: 5
-  side: 0
+  Side: 0
 --- !u!212 &1718732455
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11615,7 +11641,7 @@ RectTransform:
   - {fileID: 918737468}
   - {fileID: 409873311}
   m_Father: {fileID: 648202552}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11848,12 +11874,12 @@ RectTransform:
   m_Children:
   - {fileID: 778519361}
   m_Father: {fileID: 648202552}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 250, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1870708099
 MonoBehaviour:
@@ -12259,7 +12285,7 @@ MonoBehaviour:
   textThrow: {fileID: 400414231}
   textFiling: {fileID: 1817590868}
   PlayerNumber: 4
-  side: 0
+  Side: 0
 --- !u!212 &1898878086
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12561,8 +12587,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1145518412}
-        m_TargetAssemblyTypeName: NewBall, Assembly-CSharp
+      - m_Target: {fileID: 409873312}
+        m_TargetAssemblyTypeName: TargetFiling, Assembly-CSharp
         m_MethodName: FilingRight
         m_Mode: 1
         m_Arguments:
@@ -12623,14 +12649,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24c1892727b82e43acc0fe414e8af6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PositionD0: {fileID: 1639119010}
-  PositionD1: {fileID: 552245920}
-  PositionD2: {fileID: 1442777246}
-  PositionD3: {fileID: 284909512}
-  PositionD4: {fileID: 643968170}
-  PositionD5: {fileID: 2133375861}
-  mode: 2
-  Ball: {fileID: 1145518411}
+  PositionD0: {fileID: 1639119011}
+  PositionD1: {fileID: 552245921}
+  PositionD2: {fileID: 1442777247}
+  PositionD3: {fileID: 284909513}
+  PositionD4: {fileID: 643968171}
+  PositionD5: {fileID: 2133375863}
+  Mode: 2
 --- !u!61 &1949366679
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12721,13 +12746,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNumber: 0
-  side: 0
+  Side: 0
   PH: 2
   NeighborLeft: {fileID: 2002352953}
   NeighborMid: {fileID: 1466318503}
   NeighborRight: {fileID: 173997966}
   BackLight: {fileID: 800786378}
-  Ball: {fileID: 1145518411}
+  Ball: {fileID: 1145518412}
   StatsCatch: 0
   StatsFiling: 0
 --- !u!212 &1984819357
@@ -12905,13 +12930,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNumber: 1
-  side: 0
+  Side: 0
   PH: 1
   NeighborLeft: {fileID: 556782711}
   NeighborMid: {fileID: 2045455388}
   NeighborRight: {fileID: 1984819355}
   BackLight: {fileID: 1716196615}
-  Ball: {fileID: 1145518411}
+  Ball: {fileID: 1145518412}
   StatsCatch: 0
   StatsFiling: 0
 --- !u!212 &2002352955
@@ -13109,7 +13134,7 @@ MonoBehaviour:
   textThrow: {fileID: 669554524}
   textFiling: {fileID: 629793441}
   PlayerNumber: 5
-  side: 1
+  Side: 0
 --- !u!212 &2038072515
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13206,13 +13231,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNumber: 4
-  side: 0
+  Side: 0
   PH: 2
   NeighborLeft: {fileID: 173997966}
   NeighborMid: {fileID: 2002352953}
   NeighborRight: {fileID: 1466318503}
   BackLight: {fileID: 1625216617}
-  Ball: {fileID: 1145518411}
+  Ball: {fileID: 1145518412}
   StatsCatch: 0
   StatsFiling: 0
 --- !u!212 &2045455391
@@ -13477,13 +13502,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNumber: 5
-  side: 1
+  Side: 1
   PH: 0
   NeighborLeft: {fileID: 643968170}
   NeighborMid: {fileID: 1442777246}
   NeighborRight: {fileID: 1639119010}
   BackLight: {fileID: 1915732869}
-  Ball: {fileID: 1145518411}
+  Ball: {fileID: 1145518412}
   StatsCatch: 0
   StatsFiling: 0
 --- !u!212 &2133375864

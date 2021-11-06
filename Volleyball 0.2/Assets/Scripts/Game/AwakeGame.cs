@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AwakeGame : MonoBehaviour
 {
-
     public Sprite Dahaka2D;
     public Sprite OmniMan2D;
     public Sprite Pudge2D;

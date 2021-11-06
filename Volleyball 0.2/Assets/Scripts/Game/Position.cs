@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+public enum PositionHere
+{
+    None,
+    Melle,
+    Range
+}
 
 public class Position : MonoBehaviour
 {
-    public Options.Enum PlayerNumber;
-    public Options.Side side;
-
-    public enum PositionHere
-    { 
-        None,
-        Melle,
-        Range
-    }
+    public Numbers PlayerNumber;
+    public Side Side;
 
     public PositionHere PH;
 
@@ -22,70 +20,66 @@ public class Position : MonoBehaviour
 
     public GameObject BackLight;
 
-    public GameObject Ball;
+    public BallScript Ball;
 
     public Player Here;
 
     public int StatsCatch;
     public int StatsFiling;
 
+    public Position PositionNeighborLeft => NeighborLeft.GetComponent<Position>();
+    public Position PositionNeighborMid => NeighborMid.GetComponent<Position>();
+    public Position PositionNeighborRight => NeighborRight.GetComponent<Position>();
+
     private void Start()
     {
-        int Player = (int)PlayerNumber;
-        Here = Options.ListOfTeams[(int)side].Players[(int)PlayerNumber--];
+        Here = Options.ListOfTeams[(int)Side].Players[(int)PlayerNumber--];
         GetComponent<SpriteRenderer>().sprite = Here.Face;
         transform.localScale = new Vector3(Options.SizePlayers/50, Options.SizePlayers/50, 0f);
         BackLight.transform.localScale = new Vector3(Options.SizePlayers/2, Options.SizePlayers/2, 0f);
-
-        if (PH == PositionHere.Melle)
-        {
-            StatsFiling = Here.PFiling / Options.lvlstats1;
-            StatsCatch = Here.PCatch + Options.lvlstats2;
-        }
-        if (PH == PositionHere.Range)
-        {
-            StatsFiling = Here.PFiling + 15;
-            StatsCatch = Here.PCatch;
-        }
-        if (PH == PositionHere.None)
-        {
-            StatsFiling = Here.PFiling + Options.lvlstats3;
-            StatsCatch = Here.PCatch + Options.lvlstats3;
-        }
+        SetStats();
     }
     public void NewRound()
     {
-        if (Ball.GetComponent<NewBall>().lastGoal != Ball.GetComponent<NewBall>().previousGoal)
+        if (Ball.lastGoal != Ball.previousGoal)
         {
-            if (side == Options.Side.Radiant && Ball.GetComponent<NewBall>().lastGoal == false)
+            if (Side == Side.Radiant && Ball.lastGoal == false)
             {
-                if ((int)PlayerNumber < 0)
-                    PlayerNumber = Options.Enum.five;
-                Here = Options.ListOfTeams[(int)side].Players[(int)PlayerNumber--];
-                GetComponent<SpriteRenderer>().sprite = Here.Face;
+                SwapTeams();
             }
-            if (side == Options.Side.Dire && Ball.GetComponent<NewBall>().lastGoal == true)
+            if (Side == Side.Dire && Ball.lastGoal == true)
             {
-                if ((int)PlayerNumber < 0)
-                    PlayerNumber = Options.Enum.five;
-                Here = Options.ListOfTeams[(int)side].Players[(int)PlayerNumber--];
-                GetComponent<SpriteRenderer>().sprite = Here.Face;
+                SwapTeams();
             }
         }
-        if (PH == PositionHere.Melle)
+
+        SetStats();
+    }
+
+    private void SwapTeams()
+    {
+        if ((int)PlayerNumber < 0)
+            PlayerNumber = Numbers.five;
+        Here = Options.ListOfTeams[(int)Side].Players[(int)PlayerNumber--];
+        GetComponent<SpriteRenderer>().sprite = Here.Face;
+    }
+
+    private void SetStats()
+    {
+        switch (PH)
         {
-            StatsFiling = Here.PFiling / Options.lvlstats1;
-            StatsCatch = Here.PCatch + Options.lvlstats2;
-        }
-        if (PH == PositionHere.Range)
-        {
-            StatsFiling = Here.PFiling + 15;
-            StatsCatch = Here.PCatch;
-        }
-        if (PH == PositionHere.None)
-        {
-            StatsFiling = Here.PFiling + Options.lvlstats3;
-            StatsCatch = Here.PCatch + Options.lvlstats3;
+            case PositionHere.None:
+                StatsFiling = Here.PFiling + Options.Lvlstats3;
+                StatsCatch = Here.PCatch + Options.Lvlstats3;
+                break;
+            case PositionHere.Melle:
+                StatsFiling = Here.PFiling / Options.Lvlstats1;
+                StatsCatch = Here.PCatch + Options.Lvlstats2;
+                break;
+            case PositionHere.Range:
+                StatsFiling = Here.PFiling + 15;
+                StatsCatch = Here.PCatch;
+                break;
         }
     }
 }

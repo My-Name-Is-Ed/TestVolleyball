@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +7,6 @@ public class Сomplexity : MonoBehaviour
 
     private void Start()
     {
-        K.text = $"Сложность {Options.lvlstats4}";
+        K.text = $"Сложность {Options.Lvlstats4}";
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,26 +14,27 @@ public class OptionsMode : MonoBehaviour
 
     public Text ButMode;
     public Text ButLine;
-    bool NextTo = false;
-    bool ModeBool = false;
-    float MaxDistance = .01f;
-    Vector3 Target;
+
+    private bool _nextTo = false;
+    private bool _modeBool = false;
+    private float _maxDistance = .01f;
+    private Vector3 _target;
 
     private void Update()
     {
-        if (Options.ModeOn == Options.Mode.Moving)
+        if (Options.ModeOn == Mode.Moving)
         {
-            Target = NextTo ? Player1.transform.position : Player2.transform.position;
-            Ball.transform.position = Vector3.MoveTowards(Ball.transform.position, Target, Time.deltaTime * Options.speed);
+            _target = _nextTo ? Player1.transform.position : Player2.transform.position;
+            Ball.transform.position = Vector3.MoveTowards(Ball.transform.position, _target, Time.deltaTime * Options.Speed);
         }
-        if (Options.ModeOn == Options.Mode.Learping)
+        if (Options.ModeOn == Mode.Learping)
         {
-            Target = NextTo ? Player1.transform.position : Player2.transform.position;
-            Ball.transform.position = Vector3.Lerp(Ball.transform.position, Target, Time.deltaTime * Options.speed);
+            _target = _nextTo ? Player1.transform.position : Player2.transform.position;
+            Ball.transform.position = Vector3.Lerp(Ball.transform.position, _target, Time.deltaTime * Options.Speed);
         }
-        var Distance = (Ball.transform.position - Target).sqrMagnitude;
-        if (Distance < MaxDistance * MaxDistance)
-            NextTo = !NextTo;
+        var Distance = (Ball.transform.position - _target).sqrMagnitude;
+        if (Distance < _maxDistance * _maxDistance)
+            _nextTo = !_nextTo;
 
         Options.SizeBall = SliderBall.value * 4 + 3;
         Options.SizePlayers = SliderPlayer.value * 15 + 10;
@@ -47,15 +46,15 @@ public class OptionsMode : MonoBehaviour
         if (Options.ModeLine == true)
         {
             LineRenderer.SetActive(true);
-            LineRenderer.GetComponent<LineRenderer>().SetPositions(new Vector3[] { Ball.transform.position, Target });
+            LineRenderer.GetComponent<LineRenderer>().SetPositions(new Vector3[] { Ball.transform.position, _target });
         } 
         else
             LineRenderer.SetActive(false);
     }
     public void OnClickMode()
     {
-        Options.ModeOn = ModeBool ? Options.Mode.Moving : Options.Mode.Learping;
-        ModeBool = !ModeBool;
+        Options.ModeOn = _modeBool ? Mode.Moving : Mode.Learping;
+        _modeBool = !_modeBool;
         ButMode.text = $"Режим: {Options.ModeOn}";
     }
     public void OnClickLine()
@@ -65,5 +64,4 @@ public class OptionsMode : MonoBehaviour
         ButLine.text = $"Траектория: {text}";
 
     }
-
 }

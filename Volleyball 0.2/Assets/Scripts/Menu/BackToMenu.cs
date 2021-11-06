@@ -1,10 +1,9 @@
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Exit : MonoBehaviour
+public class BackToMenu : MonoBehaviour
 {
-    public void onClick()
+    public void OnClick()
     {
         SceneManager.LoadScene(0);
     }

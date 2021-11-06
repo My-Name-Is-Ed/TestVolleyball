@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ChoiseTeam : MonoBehaviour
@@ -91,5 +89,4 @@ public class ChoiseTeam : MonoBehaviour
         MurlocsRed.SetActive(false);
         AnimeRed.SetActive(false);
     }
-
 }

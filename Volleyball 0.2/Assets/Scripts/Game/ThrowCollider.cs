@@ -1,37 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+public enum Neighbor
+{
+    Left,
+    Mid,
+    Right,
+}
 
 public class ThrowCollider : MonoBehaviour
 {
-    public enum Neighbor
-    { 
-        Left,
-        Mid,
-        Right
-    }
     public Neighbor mode;
-
-    public GameObject Ball;
-
+    public BallScript Ball;
     
-
     public void OnMouseEnter()
     {
-        if (mode == Neighbor.Left)
-            Ball.GetComponent<NewBall>().TargetNow.GetComponent<Position>().NeighborLeft.GetComponent<Position>().BackLight.SetActive(true);
-        if (mode == Neighbor.Mid)
-            Ball.GetComponent<NewBall>().TargetNow.GetComponent<Position>().NeighborMid.GetComponent<Position>().BackLight.SetActive(true);
-        if (mode == Neighbor.Right)
-            Ball.GetComponent<NewBall>().TargetNow.GetComponent<Position>().NeighborRight.GetComponent<Position>().BackLight.SetActive(true);
+        var neighbor = GetNeighbor();
+        neighbor.BackLight.SetActive(true);
     }
+
     public void OnMouseExit()
     {
-        if (mode == Neighbor.Left)
-            Ball.GetComponent<NewBall>().TargetNow.GetComponent<Position>().NeighborLeft.GetComponent<Position>().BackLight.SetActive(false);
-        if (mode == Neighbor.Mid)
-            Ball.GetComponent<NewBall>().TargetNow.GetComponent<Position>().NeighborMid.GetComponent<Position>().BackLight.SetActive(false);
-        if (mode == Neighbor.Right)
-            Ball.GetComponent<NewBall>().TargetNow.GetComponent<Position>().NeighborRight.GetComponent<Position>().BackLight.SetActive(false);
+        var neighbor = GetNeighbor();
+        neighbor.BackLight.SetActive(false);
     }
+
+    private Position GetNeighbor()
+    {
+        var targetNow = Ball.TargetNow.GetComponent<Position>();
+        Position neighbor = null;
+        switch (mode)
+        {
+            case Neighbor.Left:
+                neighbor = targetNow.NeighborLeft.GetComponent<Position>();
+                break;
+            case Neighbor.Mid:
+                neighbor = targetNow.NeighborMid.GetComponent<Position>();
+                break;
+            case Neighbor.Right:
+                neighbor = targetNow.NeighborRight.GetComponent<Position>();
+                break;
+        }
+
+        return neighbor;
+    }
+
 }
