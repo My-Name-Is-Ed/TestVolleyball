@@ -697,7 +697,7 @@ MonoBehaviour:
   textThrow: {fileID: 1375592160}
   textFiling: {fileID: 726920899}
   PlayerNumber: 0
-  Side: 0
+  Side: 1
 --- !u!212 &99973617
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5784,7 +5784,7 @@ MonoBehaviour:
   textThrow: {fileID: 463868048}
   textFiling: {fileID: 344214907}
   PlayerNumber: 3
-  Side: 0
+  Side: 1
 --- !u!212 &768086750
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6658,7 +6658,7 @@ MonoBehaviour:
   textThrow: {fileID: 187911997}
   textFiling: {fileID: 168860525}
   PlayerNumber: 4
-  Side: 0
+  Side: 1
 --- !u!212 &878008399
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8976,7 +8976,7 @@ MonoBehaviour:
   textThrow: {fileID: 1274678299}
   textFiling: {fileID: 1515512569}
   PlayerNumber: 1
-  Side: 0
+  Side: 1
 --- !u!212 &1276139490
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10409,7 +10409,7 @@ MonoBehaviour:
   textThrow: {fileID: 48435027}
   textFiling: {fileID: 475537119}
   PlayerNumber: 2
-  Side: 0
+  Side: 1
 --- !u!212 &1552982314
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13134,7 +13134,7 @@ MonoBehaviour:
   textThrow: {fileID: 669554524}
   textFiling: {fileID: 629793441}
   PlayerNumber: 5
-  Side: 0
+  Side: 1
 --- !u!212 &2038072515
 SpriteRenderer:
   m_ObjectHideFlags: 0
