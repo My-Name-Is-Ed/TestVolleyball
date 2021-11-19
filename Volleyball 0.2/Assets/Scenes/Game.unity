@@ -8093,8 +8093,6 @@ MonoBehaviour:
   CheckRadiant: {fileID: 391265448}
   CheckDire: {fileID: 952905890}
   CheckThrowText: {fileID: 1653758289}
-  CheckRadiantCounter: 0
-  CheckDireCounter: 0
   ChoiceNeighbor: {fileID: 918737469}
   TargetFiling: {fileID: 409873312}
   PositionR0: {fileID: 1984819355}
@@ -8109,9 +8107,7 @@ MonoBehaviour:
   PositionD3: {fileID: 284909512}
   PositionD4: {fileID: 643968170}
   PositionD5: {fileID: 2133375861}
-  WhoseMove: 1
-  previousGoal: 1
-  lastGoal: 0
+  TargetFuture: {fileID: 0}
 --- !u!212 &1145518413
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9547,9 +9543,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1363906369}
-        m_TargetAssemblyTypeName: Exit, Assembly-CSharp
-        m_MethodName: onClick
+      - m_Target: {fileID: 1144010266}
+        m_TargetAssemblyTypeName: BackToMenu, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11852,6 +11848,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1870708097}
   - component: {fileID: 1870708101}
+  - component: {fileID: 1870708098}
   - component: {fileID: 1870708100}
   - component: {fileID: 1870708099}
   m_Layer: 5
@@ -11881,6 +11878,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 250, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1870708098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870708096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a0e17b257c1aa84e906f539bf0feb87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballscript: {fileID: 1145518412}
 --- !u!114 &1870708099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11925,153 +11935,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1145518412}
-        m_TargetAssemblyTypeName: NewBall, Assembly-CSharp
-        m_MethodName: NewRound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1984819356}
-        m_TargetAssemblyTypeName: Position, Assembly-CSharp
-        m_MethodName: NewRound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2002352954}
-        m_TargetAssemblyTypeName: Position, Assembly-CSharp
-        m_MethodName: NewRound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 556782712}
-        m_TargetAssemblyTypeName: Position, Assembly-CSharp
-        m_MethodName: NewRound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1466318505}
-        m_TargetAssemblyTypeName: Position, Assembly-CSharp
-        m_MethodName: NewRound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2045455390}
-        m_TargetAssemblyTypeName: Position, Assembly-CSharp
-        m_MethodName: NewRound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 173997968}
-        m_TargetAssemblyTypeName: Position, Assembly-CSharp
-        m_MethodName: NewRound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1639119011}
-        m_TargetAssemblyTypeName: Position, Assembly-CSharp
-        m_MethodName: NewRound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 552245921}
-        m_TargetAssemblyTypeName: Position, Assembly-CSharp
-        m_MethodName: NewRound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1442777247}
-        m_TargetAssemblyTypeName: Position, Assembly-CSharp
-        m_MethodName: NewRound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 284909513}
-        m_TargetAssemblyTypeName: Position, Assembly-CSharp
-        m_MethodName: NewRound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 643968171}
-        m_TargetAssemblyTypeName: Position, Assembly-CSharp
-        m_MethodName: NewRound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2133375863}
-        m_TargetAssemblyTypeName: Position, Assembly-CSharp
-        m_MethodName: NewRound
+      - m_Target: {fileID: 1870708098}
+        m_TargetAssemblyTypeName: ButtonNewRound, Assembly-CSharp
+        m_MethodName: onClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

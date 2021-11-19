@@ -31,8 +31,7 @@ public class BallScript : MonoBehaviour
     public GameObject PositionD4;
     public GameObject PositionD5;
 
-
-    public GameObject TargetFuture;
+    public GameObject TargetFuture = null;
     public Position Position => TargetNow.GetComponent<Position>();
 
     public Action _way;
@@ -51,12 +50,16 @@ public class BallScript : MonoBehaviour
 
         ChoiceNeighbor.BallScript = this;
         TargetFiling.BallScript = this;
+        ServiceGame.Waiter = true;
     }
     void Update()
     {
         _way?.Invoke();
-        ServiceGame.Test(TargetNow, TargetFuture);
         ServiceGame.DistanceCalculate(TargetNow, transform.position);
+        if (TargetFuture != null)
+            ServiceGame.Test(ref TargetNow, ref TargetFuture, this, TargetNow.GetComponent<Position>(), TargetFuture.GetComponent<Position>());
+        if (ServiceGame.Waiter == true)
+            Wait();
     }
     public void Learping()
     {
@@ -73,18 +76,33 @@ public class BallScript : MonoBehaviour
     }
     public void Wait()
     {
-        if ((ServiceGame.Distance < ServiceGame.MaxDistance * ServiceGame.MaxDistance) && TargetFuture == null && ServiceGame.WhoseMove == true)
+        if (ServiceGame.Distance < (ServiceGame.MaxDistance * ServiceGame.MaxDistance)
+            && TargetFuture == null && ServiceGame.WhoseMove == true
+            && ServiceGame.Waiter == true)
         {
+            ServiceGame.Waiter = false;
             Invoke("WaitGoal", 1.5f);
         }
         else
             CancelInvoke("WaitGoal");
         if (TargetFuture == null && ServiceGame.WhoseMove == true)
-            Controlers.SetActive(true);
+            SetTrue(Controlers);
         else
-            Controlers.SetActive(false);
+            SetFalse(Controlers);
         if (ServiceGame.Distance <= ServiceGame.MaxDistance * ServiceGame.MaxDistance && ServiceGame.WhoseMove == false)
-            ServiceGame.TurnDire();
+            ServiceGame.TurnDire(ref TargetFiling, ref ChoiceNeighbor);
+    }
+    public void SetFalse(GameObject Object)
+    {
+        Object.SetActive(false);
+    }
+    public void SetTrue(GameObject Object)
+    {
+        Object.SetActive(true);
+    }
+    public void WaitGoal()
+    {
+        ServiceGame.Goal(this);
     }
 }
 

@@ -41,13 +41,13 @@ public class Position : MonoBehaviour
     }
     public void NewRound()
     {
-        if (Ball.lastGoal != Ball.previousGoal)
+        if (ServiceGame.lastGoal != ServiceGame.previousGoal)
         {
-            if (Side == Side.Radiant && Ball.lastGoal == false)
+            if (Side == Side.Radiant && ServiceGame.lastGoal == false)
             {
                 SwapTeams();
             }
-            if (Side == Side.Dire && Ball.lastGoal == true)
+            if (Side == Side.Dire && ServiceGame.lastGoal == true)
             {
                 SwapTeams();
             }

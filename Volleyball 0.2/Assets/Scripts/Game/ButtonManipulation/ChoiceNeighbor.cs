@@ -24,9 +24,11 @@ public class ChoiceNeighbor : MonoBehaviour
     }
     private void SetTargetFuture()
     {
-        BallScript.CheckThrow++;
-        BallScript.CheckThrowText.text = $"{BallScript.CheckThrow}";
-        BallScript.Speed += 0.1f;
-        BallScript.ThrowOrFilling = false;
+        ServiceGame.CheckThrow++;
+        BallScript.CheckThrowText.text = $"{ServiceGame.CheckThrow}";
+        ServiceGame.Speed += 0.1f;
+        ServiceGame.ThrowOrFilling = false;
+        CancelInvoke("WaitGoal");
+        ServiceGame.Waiter = true;
     }
 }
